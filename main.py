@@ -13,8 +13,6 @@ from sam3.model.sam3_image_processor import Sam3Processor
 import numpy as np
 import matplotlib
 
-# 기존 overlay_masks 함수는 GUI 애플리케이션에서도 그대로 사용됩니다.
-
 
 def overlay_masks(image, masks):
     image = image.convert("RGBA")
@@ -50,6 +48,9 @@ class SegmentationApp(QMainWindow):
 
     def __init__(self):
         super().__init__()
+
+        print("Initializing window object...")
+
         self.setWindowTitle("SAM3 Segmentation GUI")
         self.setGeometry(100, 100, 1200, 800)
 
@@ -71,6 +72,9 @@ class SegmentationApp(QMainWindow):
         self.populate_image_list()
 
     def init_ui(self):
+
+        print("Initializing gui...")
+
         # 메인 스플리터 (좌/우 분할)
         splitter = QSplitter(Qt.Orientation.Horizontal)
 
@@ -112,6 +116,9 @@ class SegmentationApp(QMainWindow):
         self.setCentralWidget(splitter)
 
     def populate_image_list(self, directory="data"):
+
+        print("Reading image list...")
+
         """'data' 디렉토리에서 이미지를 찾아 목록에 추가합니다."""
         if not os.path.exists(directory):
             os.makedirs(directory)
@@ -204,6 +211,9 @@ class SegmentationApp(QMainWindow):
 
 
 if __name__ == '__main__':
+
+    print("Starting main...")
+
     # PyQt6가 설치되어 있는지 확인
     try:
         from PyQt6.QtWidgets import QApplication

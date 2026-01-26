@@ -16,6 +16,12 @@ wget https://raw.githubusercontent.com/openai/CLIP/main/clip/bpe_simple_vocab_16
 mv bpe_simple_vocab_16e6.txt.gz .venv/lib/python3.12/site-packages/assets/
 ```
 
+- Qt6 라이브러리를 설치한다.
+
+```bash
+sudo apt install qt6-base-dev libqt6gui6 libqt6widgets6 libxcb-cursor0
+```
+
 ## Login
 
 - Meta의 SAM3 모델을 Huggingface의 허용된 계정만 접속할 수 있다.
