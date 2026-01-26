@@ -1,0 +1,22 @@
+[project]
+name = "surgical-instrument-count"
+version = "0.1.0"
+description = "수술 도구 자동 계수 실험"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+  "huggingface-hub>=0.36.0",
+  "pillow>=12.1.0",
+  "sam3>=0.1.2",
+  "torchaudio>=2.10.0",
+  "torchvision>=0.25.0",
+  "transformers>=4.57.6",
+]
+
+[[tool.uv.index]]
+name = "pytorch-cu121"
+url = "https://download.pytorch.org/whl/cu121"
+explicit = true
+
+[tool.uv.sources]
+torch = { index = "pytorch-cu121" }
