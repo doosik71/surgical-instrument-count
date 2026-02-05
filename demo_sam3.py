@@ -1,15 +1,24 @@
 import sys
 import os
 from PyQt6.QtWidgets import (
-    QApplication, QMainWindow, QWidget, QHBoxLayout, QVBoxLayout,
-    QListWidget, QLineEdit, QPushButton, QLabel, QSplitter, QListWidgetItem
+    QApplication,
+    QHBoxLayout,
+    QLabel,
+    QLineEdit,
+    QListWidget,
+    QListWidgetItem,
+    QMainWindow,
+    QPushButton,
+    QSplitter,
+    QVBoxLayout,
+    QWidget
 )
 from PyQt6.QtGui import QPixmap, QImage
 from PyQt6.QtCore import Qt
 
 from PIL import Image
-from sam3.model_builder import build_sam3_image_model
-from sam3.model.sam3_image_processor import Sam3Processor
+from sam3.model_builder import build_sam3_image_model  # type: ignore
+from sam3.model.sam3_image_processor import Sam3Processor  # type: ignore
 import numpy as np
 import matplotlib
 
@@ -213,13 +222,6 @@ class SegmentationApp(QMainWindow):
 if __name__ == '__main__':
 
     print("Starting main...")
-
-    # PyQt6가 설치되어 있는지 확인
-    try:
-        from PyQt6.QtWidgets import QApplication
-    except ImportError:
-        print("PyQt6가 설치되지 않았습니다. 'pip install PyQt6' 명령어로 설치해주세요.")
-        sys.exit(1)
 
     app = QApplication(sys.argv)
     main_win = SegmentationApp()
